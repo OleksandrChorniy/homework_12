@@ -29,7 +29,7 @@ def main():
     address_book = AddressBook()
 
     try:
-        address_book.load_from_file('address_book')
+        address_book.load_from_file('address_book.bin')
     except FileNotFoundError:
         pass
 
@@ -44,7 +44,7 @@ def main():
             phone_number = input("Enter the phone number : ")
             contact = Contact(name, phone_number)
             address_book.add_contact(contact)
-            address_book.save_to_file('address_book')
+            address_book.save_to_file('address_book.bin')
         elif choice == '2':
             search = input("Enter the 'name/phone': ")
             result = address_book.search_contacts(search)
